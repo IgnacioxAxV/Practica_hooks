@@ -1,8 +1,9 @@
 import { HTML_TAGS } from "./shared/constants/html-tags.constants"
 import { TaskBoard } from "./features/tasks/components/TaskBoard"
 import { ThemeProvider } from "./features/theme/context/ThemeProvider"
-import { ThemeToggle } from "../features/theme/components/ThemeToggle"
-
+import { ThemeToggle } from "./features/theme/components/ThemeToggle"
+import { useTheme } from "./features/theme/hooks/useTheme"
+import "./index.css"
 
 function AppContent() {
   
