@@ -1,13 +1,29 @@
-import AppProviders from './providers/AppProviders'
-import TaskBoard from '../features/tasks/components/TaskBoard'
-import './styles/index.css'
+import { HTML_TAGS } from "./shared/constants/html-tags.constants"
+import { TaskBoard } from "./features/tasks/components/TaskBoard"
+import { ThemeProvider } from "./features/theme/context/ThemeProvider"
+import { ThemeToggle } from "../features/theme/components/ThemeToggle"
 
-function App() {
+
+function AppContent() {
+  
+const MainTag = HTML_TAGS.MAIN
+const TitleTag = HTML_TAGS.H1
+const {theme} = useTheme()
+
   return (
-    <AppProviders>
+    <MainTag className= {theme}>
+      <TitleTag>Task Board Lab</TitleTag>
+      <ThemeToggle />
       <TaskBoard />
-    </AppProviders>
+    </MainTag>
   )
 }
 
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  )
+}
 export default App
